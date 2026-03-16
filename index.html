@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family:Bodoni+Moda:ital,wght@0,400;1,400&family=Inter:wght@200;300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=Inter:wght@200;300;400&display=swap');
 
         body {
             font-family: 'Inter', sans-serif;
@@ -41,6 +41,40 @@
             border-color: #000;
         }
 
+        /* Overlay for luxury hover */
+        .package-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: 0.5s ease;
+        }
+
+        .package-card:hover .package-overlay {
+            opacity: 1;
+        }
+
+        /* Buttons inside overlay */
+        .overlay-btn {
+            border: 1px solid white;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            margin-top: 0.75rem;
+            font-size: 10px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+        }
+
+        .overlay-btn:hover {
+            background: white;
+            color: black;
+        }
+
         /* Luxury buttons */
         .lux-btn {
             letter-spacing: 0.25em;
@@ -67,7 +101,7 @@
         <span class="uppercase tracking-[0.4em] text-gray-400 text-xs block mb-6">Refined Movement</span>
         <h1 class="serif text-6xl md:text-8xl mb-6 italic">Dance Coaching</h1>
         <p class="text-gray-500 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
-            Precision. Elegance. Mastery. A coaching experience designed for dancers who value excellence.
+            Precision. Elegance. Mastery. A luxury coaching experience designed for dancers who value excellence.
         </p>
     </header>
 
@@ -76,8 +110,8 @@
     <!-- PACKAGES -->
     <section class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
 
-        <!-- 1 -->
-        <div class="border border-gray-200 p-10 lux-card lux-fade">
+        <!-- 1 — PRIVATE COACHING -->
+        <div class="package-card relative overflow-hidden border border-gray-200 p-10 lux-card lux-fade">
             <span class="uppercase text-[10px] tracking-[0.3em] text-gray-400 block mb-4">Package 01</span>
             <h2 class="serif text-3xl mb-6 italic">Private Coaching</h2>
             <p class="text-gray-600 text-sm leading-relaxed mb-8">
@@ -90,9 +124,16 @@
                 <li>• Flexible Scheduling</li>
             </ul>
             <p class="italic text-gray-500 text-sm border-l pl-4">The most efficient path to mastery.</p>
+
+            <!-- OVERLAY BUTTONS -->
+            <div class="package-overlay">
+                <a href="https://wa.me/1416595274" class="overlay-btn">Book Class</a>
+                <a href="https://wa.me/1416595274" class="overlay-btn">WhatsApp</a>
+                <a href="https://t.me/Slavik_chichugin" class="overlay-btn">Telegram</a>
+            </div>
         </div>
 
-        <!-- 2 -->
+        <!-- 2 — SOCIAL DANCE -->
         <div class="border border-gray-200 p-10 lux-card lux-fade">
             <span class="uppercase text-[10px] tracking-[0.3em] text-gray-400 block mb-4">Package 02</span>
             <h2 class="serif text-3xl mb-6 italic">Social Dance</h2>
@@ -111,8 +152,8 @@
             </a>
         </div>
 
-        <!-- 3 -->
-        <div class="border border-black p-10 bg-black text-white lux-card lux-fade">
+        <!-- 3 — PREMIUM PATH -->
+        <div class="package-card relative overflow-hidden bg-black text-white border border-black p-10 lux-card lux-fade">
             <span class="uppercase text-[10px] tracking-[0.3em] text-gray-500 block mb-4">Premium Path</span>
             <h2 class="serif text-3xl mb-6 italic">Pro-Am Performance</h2>
             <p class="text-gray-400 text-sm leading-relaxed mb-8">
@@ -125,6 +166,13 @@
                 <li>• Performance Events</li>
             </ul>
             <p class="italic text-gray-300 text-sm border-l border-white pl-4">Train at a professional standard.</p>
+
+            <!-- OVERLAY BUTTONS -->
+            <div class="package-overlay">
+                <a href="https://wa.me/1416595274" class="overlay-btn">Book Class</a>
+                <a href="https://wa.me/1416595274" class="overlay-btn">WhatsApp</a>
+                <a href="https://t.me/Slavik_chichugin" class="overlay-btn">Telegram</a>
+            </div>
         </div>
 
     </section>
